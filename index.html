@@ -1,249 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel = "stylesheet">
-                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-                <link rel = "stylesheet" href="./assets/css/style.css" />
-    <title>Weather Dashboard</title>
-    </head>
-    <body>
-                        <h1>Weather Dashboard</h1>
 
-                        <!-- <div class="row">
-                            <div class="col">col</div>
-                            <div class="col">col</div>
-                            <div class="col">col</div>
-                            <div class="col">col</div>
-                          </div>
-                          <div class="row">
-                            <div class="col-8">col-8</div>
-                            <div class="col-4">col-4</div>
-                          </div> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- <link rel="stylesheet" href="js/javascript.js"/> -->
+</head>
 
-                        
-
-
-                        <!-- <div class="d-flex flex-column bd-highlight mb-3">
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                            <div class="d-flex justify-content-evenly">...</div>
-                            <div class="p-2 bd-highlight">Flex item 2</div>
-                            <div class="d-flex justify-content-evenly">...</div>
-                            <div class="p-2 bd-highlight">Flex item 3</div>
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                            <div class="p-2 bd-highlight">Flex item 2</div>
-                            <div class="p-2 bd-highlight">Flex item 3</div>
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                        </div>
-
-                        <div class="d-flex flex-column bd-highlight mb-3">
-                            <div class="p-2 bd-highlight">Flex item 3</div>
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                            <div class="p-2 bd-highlight">Flex item 2</div>
-                            <div class="p-2 bd-highlight">Flex item 3</div>
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                            <div class="p-2 bd-highlight">Flex item 2</div>
-                            <div class="p-2 bd-highlight">Flex item 1</div>
-                        </div> -->
-
-
-
-                        <!-- <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                1 of 2
-                              </div>
-                              <div class="col">
-                                2 of 2
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col">
-                                1 of 3
-                              </div>
-                              <div class="col">
-                                2 of 3
-                              </div>
-                              <div class="col">
-                                3 of 3
-                              </div>
-                            </div>
-                          </div>          -->
-
-
-
-
-                          <!-- <div class="container">
-                            <div class="row align-items-start">
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                            </div>
-                            <div class="row align-items-center">
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                            </div>
-                            <div class="row align-items-end">
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                              <div class="col">
-                                One of three columns
-                              </div>
-                            </div>
-                          </div> -->
-
-
-                          <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<!-- <div class="row">
-    <div class="col-12 col-md-8">.col-12 .col-md-8</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-  </div> -->
-  
-  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-  <!-- <div class="row">
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-  </div> -->
-  
-  <!-- Columns are always 50% wide, on mobile and desktop -->
-  <!-- <div class="row">
-    <div class="col-6">.col-6</div>
-    <div class="col-6">.col-6</div>
-  </div> -->
-
-<!-- Four column layout -->
-<section class="container my-5 bg-dark text-light">
-    <div class="column">
-      <div class="row-12 -md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="row-12 -md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
+<body>
+  <header>
+    <div class="row">
+      <h1 class="col-12 text-center text-white fw-bold fs-2 py-1" style="background-image: linear-gradient(
+              102deg,
+              rgba(112, 42, 234, 0.7) 0%,
+              rgba(155, 51, 215, 0.7) 24%,
+              rgba(58, 20, 97, 0.7) 91%);">
+        <a href="./" style="text-decoration: none">
+          <img style="width: 5rem" src="./assets/images/weather-icons-day-snow-thunderstorm.png" alt="weather logo" />
+        </a>Weather Dashboard
+      </h1>
     </div>
+  </header>
+
+  <main class="container-fluid px-4">
+    <div class="row">
+      <div id="box" class="col-lg-2 col-sm-12 h-100 py-3">
+        <div class="fw-bold fs-4">Search for a City:</div>
+        <div class="my-3">
+          <input type="text" class="form-control rounded p-2 fs-5" name="cityName" id="cityName" placeholder="City Name"
+            style="border: none; background: rgba(232, 216, 252, 0.747)" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100 fs-5 text-white p-1" id="searchBtn"
+          style="border:none; background:rgb(117, 47, 117)" />Search</button>
+        <div class="border border-secondary my-4"></div>
+        <div id="searchHistory"></div>
+      </div>
+      <div class="col-lg-10 col-sm-12 h-100">
+        <div class="d-flex flex-column justify-content-around p-3 h-75 fs-5 gap-3">
+          <div class="fw-bold fs-2">
+            <span id="currCity">City Name</span>, <span id="country">Country</span> <span id="currDate">(Date: Month
+              Date Year Day Time (Moment JS))</span><img id="wicon" src="" alt="" />
+          </div>
+          <div>Temp: <span id="temp"></span>°F</div>
+          <div>Feels Like: <span id="0-temp"></span>°F</div>
+          <div>Wind Speed: <span id="wind-speed-speed"></span> MPH</div>
+          <div>Humidity: <span id="humid"></span>%</div>
+          <div>UV Index: <span id="uvIndex"></span></div>
+          <div>Rain: <span id="rain"></span>%</div>
+          <div>Highest Temp:<span id="highest temp"></span>F</div>
+          <div>Lowest Temp:<span id="lowest temp"></span></div>
+        </div>
+        <div class="row pt-3">
+          <h2 class="fs-3 fw-bold p-2 px-4">5-Day Daily Forecast:(date picker) </h2 </div>
+          <div id="14-days" class="d-flex flex-row gap-2 flex-wrap text-wrap fs-6 text-white">
+            <div class="card d-flex flex-column justify-content-around p-3" style="width: 14rem; height: 14rem">
+              <h3 class="card-title fs-5">Date: <span id="0-day"></span></h3>
+              <img id="0-img"
+                src="api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}"
+                alt="" />
+              <div class="card-subtitle">Temp: <span id="0-temp"></span>°F</div>
+              <div class="card-subtitle">Feels Like: <span id="0-temp"></span>°F</div>
+              <div class="card-subtitle">Wind Speed: <span id="0-wind-speed-speed"></span> MPH</div>
+              <div class="card-subtitle">Humidity: <span id="0-humid"></span>%</div>
+              <div class="card-subtitle">UV Index:<span></span></div>
+              <div class="card-subtitle">Rain: <span id="0-rain"></span>%</div>
+              <div class="card-subtitle">Highest Temp: <span id="0-hightest-temp"></span>°F</div>
+              <div class="card-subtitle">Lowest Temp: <span id="0-lowest-temp"></span>°F</div>
+            </div>
+
+            <div class="card d-flex flex-column justify-content-around p-3" style="width: 14rem; height: 14rem">
+              <h3 class="card-title fs-5 fs-">Date: <span id="1-day"></span></h3>
+              <img id="1-img"
+                src="api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}"
+                alt="" />
+              <div class="card-subtitle">Temp: <span id="1-temp"></span>°F</div>
+              <div class="card-subtitle">Feels Like: <span id="1-temp"></span>°F</div>
+              <div class="card-subtitle">Wind Speed: <span id="1-wind-speed"></span> MPH</div>
+              <div class="card-subtitle">Humidity: <span id="1-humid"></span>%</div>
+              <div class="card-subtitle">UV Index:<span></span></div>
+              <div class="card-subtitle">Rain: <span id="1-rain"></span>%</div>
+              <div class="card-subtitle">Highest Temp: <span id="1-hightest-temp"></span>°F</div>
+              <div class="card-subtitle">Lowest Temp: <span id="1-lowest-temp"></span>°F</div>
+            </div>
+
+            <div class="card d-flex flex-column justify-content-around p-3" style="width: 14rem; height: 14rem">
+              <h3 class="card-title fs-5">Date: <span id="2-day"></span></h3>
+              <img id="2-img"
+                src="api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}"
+                alt="" />
+              <div class="card-subtitle">Temp: <span id="2-temp"></span>°F</div>
+              <div class="card-subtitle">Feels Like: <span id="2-temp"></span>°F</div>
+              <div class="card-subtitle">Wind Speed: <span id="2-wind-speed"></span> MPH</div>
+              <div class="card-subtitle">Humidity: <span id="2-humid"></span>%</div>
+              <div class="card-subtitle">UV Index:<span></span></div>
+              <div class="card-subtitle">Rain: <span id="2-rain"></span>%</div>
+              <div class="card-subtitle">Highest Temp: <span id="2-hightest-temp"></span>°F</div>
+              <div class="card-subtitle">Lowest Temp: <span id="2-lowest-temp"></span>°F</div>
+            </div>
+
+            <div class="card d-flex flex-column justify-content-around p-3" style="width: 14rem; height: 14rem">
+              <h3 class="card-title fs-5">Date: <span id="3-day"></span></h3>
+              <img id="3-img"
+                src="api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}"
+                alt="" />
+              <div class="card-subtitle">Temp: <span id="3-temp"></span>°F</div>
+              <div class="card-subtitle">Feels Like: <span id="3-temp"></span>°F</div>
+              <div class="card-subtitle">Wind Speed: <span id="3-wind-speed"></span> MPH</div>
+              <div class="card-subtitle">Humidity: <span id="3-humid"></span>%</div>
+              <div class="card-subtitle">UV Index:<span></span></div>
+              <div class="card-subtitle">Rain: <span id="3-rain"></span>%</div>
+              <div class="card-subtitle">Highest Temp: <span id="3-hightest-temp"></span>°F</div>
+              <div class="card-subtitle">Lowest Temp: <span id="3-lowest-temp"></span>°F</div>
+            </div>
+
+            <div class="card d-flex flex-column justify-content-around p-3" style="width: 14rem; height: 14rem">
+              <h3 class="card-title fs-5">Date: <span id="4-day"></span></h3>
+              <img id="4-img"
+                src="api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}"
+                alt="" />
+              <div class="card-subtitle">Temp: <span id="4-temp"></span>°F</div>
+              <div class="card-subtitle">Feels Like: <span id="4-temp"></span>°F</div>
+              <div class="card-subtitle">Wind Speed: <span id="4-wind-speed"></span> MPH</div>
+              <div class="card-subtitle">Humidity: <span id="4-humid"></span>%</div>
+              <div class="card-subtitle">UV Index:<span></span></div>
+              <div class="card-subtitle">Rain: <span id="4-rain"></span>%</div>
+              <div class="card-subtitle">Highest Temp: <span id="4-hightest-temp"></span>°F</div>
+              <div class="card-subtitle">Lowest Temp: <span id="4-lowest-temp"></span>°F</div>
+            </div>
+
+          
+
+            
 
 
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="row-12 -md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <h3>Title</h3>
-        <h5>3/12 columns on large, 6/12 columns on medium, full-width on small</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat perspiciatis, debitis a perferendis error
-          quaerat, nulla exercitationem minus, quam libero in ab obcaecati praesentium hic ipsum possimus voluptate modi
-          eius?</p>
-    </div>
-  </section>
+  <h2 class="fs-3 fw-bold p-2 px-4">3 Hour Forecast</h2>
+
+  },
+  "lat": 36.4761,
+  "lon": -119.4432,
+  "country": "US",
+  "state": "CA"
+  }
+
+  current weather
+  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={3f1cab551e8d4185d8486ab763d9b25b}
+  hourly forecast (4 days)
+  https://pro.openweathermap.org/data/2.5/forecast/hourly?zip=91748,us&appid={3f1cab551e8d4185d8486ab763d9b25b}
+
+  ??? http://api.openweathermap.org/geo/1.0/zip?zip={zip code},{country code}&appid={3f1cab551e8d4185d8486ab763d9b25b}
+
+  16 day forecast
+  api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={3f1cab551e8d4185d8486ab763d9b25b}
 
 
+  30 days climatic
+  https://pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={3f1cab551e8d4185d8486ab763d9b25b}
+  historical weather
+  https://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&type=hour&start={start}&end={end}&appid={3f1cab551e8d4185d8486ab763d9b25b}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    referrerpolicy="no-referrer"></script>
+  <script src="js/javascript2.js"></script>
 </body>
+
 </html>
