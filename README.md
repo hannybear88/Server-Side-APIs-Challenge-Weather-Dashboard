@@ -38,7 +38,8 @@ SO THAT I can plan a trip accordingly
 
 ## How to Use the Project and Acceptance Criteria
 
-<a href=https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/ <img src = >><u><i><strong>Click here</strong></i></u></a> to be directed straight to the deployed application
+<!-- <u><i><strong>Click on the image below</strong></i></u></a> to be directed straight to the deployed application
+<a href= "https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard"><img src="./assets/images/Weather-Dashboard-Icon-and-Title.png" /></a> -->
 
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
@@ -57,12 +58,12 @@ WHEN I click on a city in the search history
 
 THEN I am again presented with current and future conditions for that city
 
-<!-- GIVEN I am using a daily planner to create a schedule
+GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner<br>
 THEN the current day is displayed at the top of the calendar
-<img src="./assets/images/Work-Day-Current-Day.png" />
+<img src="./assets/images/Weather-Dashboard-Icon-and-Title.png" />
 
-WHEN I scroll down
+<!-- WHEN I scroll down
 THEN I am presented with time blocks for standard business hours
 <img src="./assets/images/Work-Day-Timeblocks-Shown.png" />
 
