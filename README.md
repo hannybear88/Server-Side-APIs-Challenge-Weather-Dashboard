@@ -6,7 +6,7 @@ Homework Challenge #6
 
 ## Project Description
 
-<!-- For this assignment we had to create a work day scheduler. We had to make sure that there are timeblocks for the day and that the time, day, and date shows at the top. We had to make sure that the time blocks show the past, present, and future. The past shows as gray, present as red, and future shows as green. When the user clicks on the time slot it would turn white then they would write their schedule for the timeslot(s). When they click out of it it would go back to gray then the user would have to save. When the user clicks refresh then their schedule for the timeslot(s) would persist. They can also click on clear day to completely clear out their schedule for the day. I had also added extra hours to the day just in case the user has meetings and other work related schedules before 9AM. I had also added a delete button to make it easier for the user just in case they had accidentally added the schedule for the wrong time or if there was a cancellation or change in time for the original schedule time. My live page can be seen in the <a href="#Table of Contents">Table of Contents</a> section. The HTML and CSS codes were all already provided by UCSD Coding Bootcamp. JQuery, Bootstrap, and Moment.js were also used on this application. It is also responsive to all devices: laptop,tablets, and mobile. You can <a href=https://github.com/hannybear88/Third-Party-APIs-Challenge-Work-Day-Scheduler>Click here</a>  to see my code for this project.  -->
+<!-- For this assignment we had to create a weather dashboard. We had to make sure that when first opening the applcation the current weather shows, and the next five days and 3-hourly weather shows. In those cards, the current city, weather condition with icon, humidity, wind speed, and date are in them. When the user searches for a weather in a city it will automatically display what I had just mentioned. For the date I used the moment.js code where it shows the date, year, day of the week, and the time. The user can either search using the city or city, state code, and country code. When the user clicks on a history city of their search it will take them back to that search and show the weather. When the user searches for the same city it won't appear again. The city also saves after they click refresh. I had also added a "clear history" button just in case the user wants to start fresh. The background also changes according to what the weather conditions is.  In the cards I had also added additional weather conditions just in case the user likes to get more indepth information on the weather. My live page can be seen in the <a href="#Table of Contents">Table of Contents</a> section. HTML, CSS, Vanilla Javascript, Bootstrap, and Moment.js are all used on this application. It is also responsive to all devices: laptop,tablets, and mobile. You can <a href=https://github.com/hannybear88/Server-Side-APIs-Challenge-Weather-Dashboard>Click here</a>  to see my code for this project.  -->
 
 
 
@@ -38,7 +38,7 @@ SO THAT I can plan a trip accordingly
 
 ## How to Use the Project and Acceptance Criteria
 
-<a href=https://hannybear88.github.io/Third-Party-APIs-Challenge-Work-Day-Scheduler/>Click here</a> to be directed straight to the deployed application
+<a href=https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/>Click here</a> to be directed straight to the deployed application
 
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
@@ -100,10 +100,12 @@ THEN the saved events persist
 <img src="./assets/images/Schedule-Persists-After-Clicking-Refresh.gif"/> -->
 
 ## Challenges
-<!-- This assignment was a challenging. I'm not used to using JQuery, Moment.js, and Bootstrap. It is definitely easier than Vanilla Javascript. Even though this assignment was challenging, it was quite enjoyable because I do like having a planner and writing things down that I need to do and plans and future events, so that I don't forget and I don't double book on making plans or make plans on a day I have an event I am attending. I'd like to eventually challenge myself on this project by adding future dates, so that the user is not limited to one day and waiting til 12:00AM to plan their event for the next day. I'd like for the user to have the freedom by not having a limit on planning their days and events. -->
+<!-- This assignment was a challenging. Vanilla Javascript is quite challenging to use.  Moment.js, and Bootstrap. Even though this assignment was challenging, it was quite enjoyable because I do like knowing what the weather is like especially on days I have plans where my friends/family and I would be outside most of the day if not all day. It is also very useful to know the weather in advance, so I am prepared to drive in a weather other than the weather conditions being sunny and clear. It also helps me how I should dress up and if I need to bring extra clothes depending on the weather. I'd like to eventually challenge myself on this project by adding an option of having a section where it leads to a planner according to the weather. 
+
+I wanted to add the UV Index in the cards, however, unfortunately it isn't available for free anymore. I had also wanted to add the weather snow conditions, but I 
 
 ## Success
-I feel like I did well on this assignment by suceeding on the requirements on the assignment. I had added extra features to challenge myself which I like to do. 
+I feel like I did well on this assignment by suceeding on the requirements on the assignment. I had added extra features to challenge myself which I like to do. I had added the extra weather conditions, so the user knows what to expect such as the chance of rain and what the lowest & highest temperature would be for the next 5 days and 3-hourly forecast so they can be prepared what the weather would be like. 
 
 
 
@@ -116,9 +118,9 @@ I feel like I did well on this assignment by suceeding on the requirements on th
 ## Features
 
 <ul>
-    <!-- <li>HTML</li>
+    <li>HTML</li>
     <li>CSS</li>
-    <li>JQuery</li>
+    <li>Vanilla Javascript</li>
     <li>Moment.js</li>
     <li>Bootstrap</li> -->
 </ul>
