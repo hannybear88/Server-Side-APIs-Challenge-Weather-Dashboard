@@ -121,9 +121,9 @@ I feel like I did well on this assignment by suceeding on the requirements on th
 <ul>
     <li>HTML</li>
     <li>CSS</li>
-    <li>Vanilla Javascript</li>
+    <li>jQuery</li>
     <li>Moment.js</li>
-    <li>Bootstrap</li> -->
+    <li>Bootstrap</li> 
 </ul>
 
 ## Support
