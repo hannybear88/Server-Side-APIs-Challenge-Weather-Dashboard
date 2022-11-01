@@ -57,11 +57,11 @@ var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 // Set the page up
 cityInput.focus();
 renderSearchHistory();
-getCityWeather(); // Initialize data of the cards
+getCityWeather(); // Initialise data of the cards
 
 // Set live clock
 window.setInterval(function () {
-    $('#currentDate').text(moment().utcOffset(timezone/60).format("MMMM Do YYYY, h:mm:ss a"))
+    $('#currentDate').text(moment().utcOffset(timezone/60).format("MMMM Do YYYY, dddd, h:mm:ss a"))
 }, 1000);
 
 // Set up buttons
@@ -106,15 +106,11 @@ $(document).on("click", ".btn-secondary", (event) => {
 
 // Clear search history
 $(document).on("click", "#clearHistory", (event) => {
-	  // Reset savedCities data, then re-render search history
+	  // Reset savedCities data, then re-render search history 
     localStorage.removeItem("savedCities")
     savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
     renderSearchHistory();
 });
-
-
-
-
 
 
 
