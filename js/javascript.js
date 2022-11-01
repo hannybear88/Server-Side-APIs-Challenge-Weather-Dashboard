@@ -54,4 +54,66 @@ var savedBtns = $('button[class*="btn-secondary"]');
 // Save cityName to localStorage
 var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
+// Set the page up
+cityInput.focus();
+renderSearchHistory();
+getCityWeather(); // Initialize data of the cards
+
+// Set live clock
+window.setInterval(function () {
+    $('#currentDate').text(moment().utcOffset(timezone/60).format("MMMM Do YYYY, h:mm:ss a"))
+}, 1000);
+
+// Set up buttons
+searchBtn.click(() => {
+	getCityWeather();
+	saveTheCity();
+	renderSearchHistory();
+});
+
+cityInput.keydown((event) => {
+	if (event.which == 13) {
+		getCityWeather();
+		saveTheCity();
+		renderSearchHistory();
+	}
+});
+
+// Delete a search entry from the history
+$(document).on("click", ".btn-close", (event) => {
+	var thisCity = event.target;
+	var parentEl = thisCity.parentElement;
+
+	for (var i = 0; i < savedCities.length; i++) {
+		if (parentEl.innerText === savedCities[i]) {
+			savedCities.splice(i, 1);
+		}
+	}
+
+	localStorage.setItem("savedCities", JSON.stringify(savedCities));
+	parentEl.remove();
+});
+
+// Reload a search entry from the history
+$(document).on("click", ".btn-secondary", (event) => {
+	var savedCity = event.target.innerText;
+	cityInput.val(savedCity);
+
+	getCityWeather();
+
+	cityInput.val("");
+});
+
+// Clear search history
+$(document).on("click", "#clearHistory", (event) => {
+	  // Reset savedCities data, then re-render search history
+    localStorage.removeItem("savedCities")
+    savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+    renderSearchHistory();
+});
+
+
+
+
+
 
