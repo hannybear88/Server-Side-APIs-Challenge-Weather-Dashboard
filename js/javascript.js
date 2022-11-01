@@ -51,13 +51,21 @@ var searchBtn = $("#searchBtn");
 var clearBtn = $("#clearHistory");
 var savedBtns = $('button[class*="btn-secondary"]');
 
+
+
+/*******************************************************************/
+/*  Acceptance Criteria #1.2*/         
+/*that city is added to the search history*/
+/*******************************************************************/
+
+
 // Save cityName to localStorage
 var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
 // Set the page up
 cityInput.focus();
 renderSearchHistory();
-getCityWeather(); // Initialise data of the cards
+getCityWeather(); // Initialize data of the cards
 
 // Set live clock
 window.setInterval(function () {
@@ -94,6 +102,13 @@ $(document).on("click", ".btn-close", (event) => {
 	parentEl.remove();
 });
 
+
+/*******************************************************************/
+/*  Acceptance Criteria #4                                    */
+/*WHEN I click on a city in the search history*/
+/*THEN I am again presented with current and future conditions for that city*/
+ /*******************************************************************/
+
 // Reload a search entry from the history
 $(document).on("click", ".btn-secondary", (event) => {
 	var savedCity = event.target.innerText;
@@ -104,6 +119,7 @@ $(document).on("click", ".btn-secondary", (event) => {
 	cityInput.val("");
 });
 
+// challenging myself beginning - adding clear history button 
 // Clear search history
 $(document).on("click", "#clearHistory", (event) => {
 	  // Reset savedCities data, then re-render search history 
@@ -111,7 +127,7 @@ $(document).on("click", "#clearHistory", (event) => {
     savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
     renderSearchHistory();
 });
-
+// challenging myself end - adding clear history button 
 
 
 
