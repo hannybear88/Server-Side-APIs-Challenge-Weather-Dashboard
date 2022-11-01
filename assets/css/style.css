@@ -1,1 +1,91 @@
+/* Body Style */
+body {
+  background-image: url(../images/Sunset-Sky-Clouds.jpeg); 
+  background-color:rgb(232, 182, 232);
+  background-size: cover;
+  color:rgba(115,81,216,0.6);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* h1 Style */
+h1 {
+  width: 100%;
+  opacity: 0.7;
+  backdrop-filter: blur(20px);
+}
 
+/* Search For A City Box */
+.col-lg-2 {
+  background-color: rgba(144, 76, 170, 0.5);
+  border-radius: 15px;
+  scrollbar-width: thin;
+  backdrop-filter: blur(20px);
+  margin-bottom: 0.5rem;
+  box-shadow: 5px 2px 2px 5px rgb(77, 45, 77),
+              2px 5px 5px 2px rgb(77, 45, 77)
+}
+
+/* City Name, Country, and Date Box */
+.h-75 {
+  background-color: rgba(190, 138, 233, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  box-shadow: 5px 2px 2px 5px rgb(55, 0, 128),
+              2px 5px 5px 2px rgb(55, 0, 128)
+          
+}
+/* 16-Day Forecast Cards */
+.card {
+  background-color: rgba(204, 128, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  color: hsla(264, 100%, 10%, 0.603);
+  box-shadow: 5px 2px 2px 5px rgb(125, 42, 125),
+              5px 2px 2px 5px rgb(125, 42, 125);
+}
+
+/* Input */
+input {
+  opacity: 0.8;
+}
+
+/* Webkit Scrollbar scrollbar width and display */
+::-webkit-scrollbar {
+  scrollbar-width: thin;
+  display: none;
+}
+
+/* Webkit Scrollbar Thumb background and width */
+::-webkit-scrollbar-thumb {
+  background: #1b1462;
+  width: 15px;
+}
+
+/* Search Button Style */
+#searchBtn {
+  opacity: 0.8;
+}
+
+/* Search History Box */
+#searchHistory {
+  overflow: scroll;
+  height: 11rem;
+}
+
+
+
+
+/* Tablets */
+@media (max-width: 780px) {  
+  body{
+      width: 100%;
+      height:25%;
+  }
+  .card{
+      width:50%;
+      height:50px;
+      flex-wrap:wrap;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) { }
