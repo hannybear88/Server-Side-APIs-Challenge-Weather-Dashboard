@@ -129,6 +129,8 @@ $(document).on("click", "#clearHistory", (event) => {
 });
 // challenging myself end - adding clear history button 
 
+// challenging myself end - adding clear history button 
+
 /*******************************************************************/
 /*  Acceptance Criteria #1.1*/
 /*WHEN I search for a city*/
@@ -156,12 +158,32 @@ async function getCityWeather() {
 		cityValue = "Rowland Heights";
     	isPageStartup = false;
 	}
-	// console.log(cityValue);   // DEBUG LINE
-	var geocodingCall =
-		"http://api.openweathermap.org/geo/1.0/direct?q=" +
-		cityValue +
-		"&limit=5&appid=" +
-		APIkey;
+// console.log(cityValue);   // DEBUG LINE
+var geocodingCall =
+"http://api.openweathermap.org/geo/1.0/direct?q=" +
+cityValue +
+"&limit=5&appid=" +
+APIkey;
 
+	//  Convert cityName to cityCoords (in lat and lon) via Geocoding
+	const cityToCoords = await fetch(geocodingCall);
+	const coords = await cityToCoords.json();
+	if (coords.length === 0) {
+		alert("City not found");
+		return;
+	}
+	console.log(coords);    // DEBUG LINE
 
+	var latCurrent = coords[0].lat;
+	var lonCurrent = coords[0].lon;
+	var cityName = coords[0].name;
+  var stateName = coords[0].state;
+	var countryName = countryNames.of(coords[0].country);
+
+	var currentWeatherCall = `https://api.openweathermap.org/data/2.5/weather?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
+	const getCurrentWeather = await fetch(currentWeatherCall);
+	const currentWeather = await getCurrentWeather.json();
+	timezone = currentWeather.timezone;
+}
+ 
 

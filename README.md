@@ -38,7 +38,7 @@ SO THAT I can plan a trip accordingly
 
 ## How to Use the Project and Acceptance Criteria
 
-<a href=https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/>Click here</a> to be directed straight to the deployed application
+<a href=https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/ <img src = >><u><i><strong>Click here</strong></i></u></a> to be directed straight to the deployed application
 
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
