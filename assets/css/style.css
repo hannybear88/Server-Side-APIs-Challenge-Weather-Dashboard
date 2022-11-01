@@ -1,10 +1,14 @@
+
 /* Body Style */
 body {
-  background-image: url(../images/Sunset-Sky-Clouds.jpeg); 
+  background-image: url(../images/Sunset-Sky-Clouds.jpeg);
+  /* background-repeat: round;
+  background-size: auto 100%; */
   background-color:rgb(232, 182, 232);
   background-size: cover;
-  color:rgba(115,81,216,0.6);
+  color:rgb(253, 244, 255);
   font-family: Arial, Helvetica, sans-serif;
+  gap: 2rem;
 }
 /* h1 Style */
 h1 {
@@ -20,7 +24,7 @@ h1 {
   scrollbar-width: thin;
   backdrop-filter: blur(20px);
   margin-bottom: 0.5rem;
-  box-shadow: 5px 2px 2px 5px rgb(77, 45, 77),
+  box-shadow: 5px 2px 2px 0px rgb(77, 45, 77),
               2px 5px 5px 2px rgb(77, 45, 77)
 }
 
@@ -28,19 +32,33 @@ h1 {
 .h-75 {
   background-color: rgba(190, 138, 233, 0.3);
   border-radius: 15px;
+  margin: 0.5rem;
   backdrop-filter: blur(20px);
-  box-shadow: 5px 2px 2px 5px rgb(55, 0, 128),
+  box-shadow: 5px 2px 2px 0px rgb(55, 0, 128),
               2px 5px 5px 2px rgb(55, 0, 128)
           
 }
-/* 16-Day Forecast Cards */
+/* Daily/Hourly Forecast Cards */
 .card {
   background-color: rgba(204, 128, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 15px;
-  color: hsla(264, 100%, 10%, 0.603);
-  box-shadow: 5px 2px 2px 5px rgb(125, 42, 125),
-              5px 2px 2px 5px rgb(125, 42, 125);
+  color: hsla(265, 100%, 97%, 0.76);
+  box-shadow: 5px 5px 2px 0px rgb(125, 42, 125),
+              5px 5px 2px 0px rgb(125, 42, 125);
+}
+
+/* Cards separation*/
+
+#five-days > .card {
+  min-width: 20%;
+}
+
+#three-hours > .card {
+  min-width: 23%;
+}
+
+.main-card-container > .d-flex{
 }
 
 /* Input */
@@ -74,18 +92,11 @@ input {
 
 
 
-/* Tablets */
+/* Tablets and Mobile Phones adjustment*/
 @media (max-width: 780px) {  
-  body{
-      width: 100%;
-      height:25%;
-  }
-  .card{
-      width:50%;
-      height:50px;
-      flex-wrap:wrap;
+
+  /*Make current weather section one column */
+  #current-container {
+      display: block!important;
   }
 }
-
-/* Mobile Phones */
-@media (max-width: 600px) { }
