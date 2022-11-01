@@ -129,6 +129,39 @@ $(document).on("click", "#clearHistory", (event) => {
 });
 // challenging myself end - adding clear history button 
 
+/*******************************************************************/
+/*  Acceptance Criteria #1.1*/
+/*WHEN I search for a city*/
+/*THEN I am presented with current and future conditions for that city and*/    
+/*******************************************************************/
+
+
+/*-----> Acceptance Critera 1.2 that city is added to the search history LINEs 56-69 <--------*/
+
+/*******************************************************************/
+/*  Acceptance Criteria #2                                    */
+/*WHEN I view current weather conditions for that city*/
+/*THEN I am presented with the city name, the date, an icon representation of weather conditions, */
+/*the temperature, the humidity, and the the wind speed*/
+/*******************************************************************/
+
+
+// Functions Section
+
+// Search Weather Api with cityCoords
+async function getCityWeather() {
+	var cityValue = cityInput.val().replace(/\s/g, "+");
+	if (isPageStartup) {
+		// Load Rowland Heights, CA on page start up
+		cityValue = "Rowland Heights";
+    	isPageStartup = false;
+	}
+	// console.log(cityValue);   // DEBUG LINE
+	var geocodingCall =
+		"http://api.openweathermap.org/geo/1.0/direct?q=" +
+		cityValue +
+		"&limit=5&appid=" +
+		APIkey;
 
 
 
