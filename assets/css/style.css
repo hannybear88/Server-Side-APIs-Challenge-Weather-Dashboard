@@ -1,4 +1,5 @@
 
+
 /* Body Style */
 body {
   background-image: url(../images/Sunset-Sky-Clouds.jpeg);
@@ -58,8 +59,7 @@ h1 {
   min-width: 23%;
 }
 
-.main-card-container > .d-flex{
-}
+
 
 /* Input */
 input {
