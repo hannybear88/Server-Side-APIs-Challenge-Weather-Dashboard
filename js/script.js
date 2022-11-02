@@ -180,10 +180,159 @@ APIkey;
   var stateName = coords[0].state;
 	var countryName = countryNames.of(coords[0].country);
 
+
+		// Adjust state name if it isn't provide
+		if (typeof stateName !== 'undefined') {
+			stateName = ", " + stateName;
+		} else {
+			stateName = "";
+		}
+
 	var currentWeatherCall = `https://api.openweathermap.org/data/2.5/weather?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
 	const getCurrentWeather = await fetch(currentWeatherCall);
 	const currentWeather = await getCurrentWeather.json();
 	timezone = currentWeather.timezone;
-}
- 
 
+
+	//  Update City Name and Date (Weather Based Icon)
+	var cityTitle = $("#currentCity");
+  	var currentState = $("#currentState");
+	var currentCountry = $("#country");
+	var currentDate = $("#currentDate");
+	cityTitle.text(cityName);
+  	currentState.text(stateName);
+	currentCountry.text(countryName);
+	// console.log(currentWeather);    // DEBUG LINE
+
+	// Manage custom background
+	if (ENABLE_CUSTOM_BACKGROUND) {
+		var body = $("body");
+		var weatherDesc = currentWeather.weather[0].main;
+		var bgrSource = `url(assets/images/${getCustomBackgroundSrc(weatherDesc)})`;
+		body.css("background-image", bgrSource);
+	}
+
+	// Set date then update card data
+	var today = moment()
+		.utcOffset(currentWeather.timezone / 60)
+		.format("MMMM Do YYYY, h:mm:ss a");
+	currentDate.text(today);
+	formatTempCard(currentWeather, "", "");
+	formatTempCardTime(currentWeather, "");
+
+	/*******************************************************************/
+	/*  Acceptance Criteria #2                                    */
+	/*WHEN I view current weather conditions for that city*/
+	/*THEN I am presented with the city name, the date, an icon representation of weather conditions, */
+	/*the temperature, the humidity, and the the wind speed*/
+	/*******************************************************************/
+
+
+	/*******************************************************************/
+	/*  Acceptance Criteria #3                                    */
+	/*  WHEN I view future weather conditions for that city            */
+	/*  THEN I am presented with a 5-day forecast that displays        */
+	/*  the date, an icon representation of weather conditions,        */
+	/*  the temperature, and the humidity
+	 /*******************************************************************/
+
+
+	// Daily/Hourly Forecast Section
+	// Api to get 5-day/3-hours forecast
+	var forecastCall = `http://api.openweathermap.org/data/2.5/forecast?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
+	// console.log(forecastCall)    //DEBUG: Check if query returns anything
+	$.ajax({
+		url: forecastCall,
+		method: "GET",
+	}).then(function (response5day) {
+		console.log(response5day);
+		$("#boxes").empty();
+
+		// Get 5 entries of forecast
+		// Indexes are 3 hours apart, so increment i by 8 for a full day
+		var fiveDayWeatherArray = [];
+		for (var i = 0, j = 0; j < 5; i = i + 8) {
+			fiveDayWeatherArray.push(response5day.list[i]);
+			var weatherData = response5day.list[i];
+			if (response5day.list[i].dt != response5day.list[i + 1].dt) {
+				formatTempCard(weatherData, "-daily", j);
+				j++;
+			}
+		}
+
+
+    // Get entries of tomorrow's 3-hourly forecast
+    for (var i = 0; i < 8; i = i + 1) {
+      var nHourlyWeatherData = response5day.list[i];
+      formatTempCard(nHourlyWeatherData, "-hourly", i);
+    }
+	});
+}
+// challenging myself beginning - adding sunset and surise
+// Format time for the cards
+function formatTempCardTime(cityData, index) {
+  // Set times and timezones for current weather card
+  var getTimezone = $(`#timezone`); // Local timezone
+  var displayTimezone = moment.unix(timezone).utcOffset(0).format("H:mm");
+  getTimezone.text(displayTimezone);
+
+  var getSunrise = $(`#${index}-sunrise-time`); // Sunrise Time
+  var sunrise = moment(cityData.sys.sunrise, "X")
+    .utcOffset(timezone / 60)
+    .format("h:mm a");
+  getSunrise.text(sunrise);
+
+  var getSunset = $(`#${index}-sunset-time`); // Sunset time
+  var sunset = moment(cityData.sys.sunset, "X")
+    .utcOffset(timezone / 60)
+    .format("h:mm a");
+  getSunset.text(sunset);
+}
+// challenging myself end - adding sunset and sunrise
+
+// Format the cards depending on their index
+function formatTempCard(dayData, cardType, index) {
+  // console.log(dayData); // DEBUG LINE
+
+  // Check if this is the current weather card
+  var isCurrentWeatherCard = false;
+  if (index === "") {
+    isCurrentWeatherCard = true;
+  }
+
+  const cardID = `${index}${cardType}`;
+
+  // Set the day or the hour, depending on cardType
+  if (cardType === "-daily") {
+    var getDay = $(`#${cardID}-day`);
+    var convertedDay = moment(dayData.dt, "X")
+      .utcOffset(timezone / 60)
+      .format("dddd,<br/>MMM Do");
+    getDay.html(convertedDay);
+  } else if (cardType === "-hourly") {
+    var getHour = $(`#${cardID}-hour`);
+    var convertedHour = moment(dayData.dt, "X")
+      .utcOffset(timezone / 60)
+      .format("hh:mm a");
+    getHour.text(convertedHour);
+  }
+
+  // Set weather icon
+  var getIcon = $(`#${cardID}-img`);
+  var iconURL = "";
+  var skyconditions = dayData.weather[0].main;
+  if (ENABLE_CUSTOM_ICONS) {
+	// Use custom icons
+    iconURL = getCustomIconSrc(skyconditions);
+  }
+  // Use icons from OSM if custom icon isn't enabled or no icons is set for the condition
+  if (!ENABLE_CUSTOM_ICONS || iconURL === "") {
+    iconURL = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
+  }
+  console.log(cardType + "     " + iconURL);		// DEBUG LINE;
+  getIcon.attr("style", "width: 4rem; height: 4rem");
+  getIcon.attr("src", iconURL);
+  getIcon.attr("alt", skyconditions);
+
+ 
+	

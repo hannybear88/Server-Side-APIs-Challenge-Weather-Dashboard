@@ -6,7 +6,7 @@ Homework Challenge #6
 
 ## Project Description
 
-<!-- For this assignment we had to create a weather dashboard. We had to make sure that when first opening the applcation the current weather shows, and the next five days and 3-hourly weather shows. In those cards, the current city, weather condition with icon, humidity, wind speed, and date are in them. When the user searches for a weather in a city it will automatically display what I had just mentioned. For the date I used the moment.js code where it shows the date, year, day of the week, and the time. The user can either search using the city or city, state code, and country code. When the user clicks on a history city of their search it will take them back to that search and show the weather. When the user searches for the same city it won't appear again. The city also saves after they click refresh. I had also added a "clear history" button just in case the user wants to start fresh. The background also changes according to what the weather conditions is.  In the cards I had also added additional weather conditions just in case the user likes to get more indepth information on the weather. My live page can be seen in the <a href="#Table of Contents">Table of Contents</a> section. HTML, CSS, Vanilla Javascript, Bootstrap, and Moment.js are all used on this application. It is also responsive to all devices: laptop,tablets, and mobile. You can <a href=https://github.com/hannybear88/Server-Side-APIs-Challenge-Weather-Dashboard>Click here</a>  to see my code for this project.  -->
+<!-- For this assignment we had to create a weather dashboard. We had to make sure that when first opening the applcation the current weather shows, and the next five days and 3-hourly weather shows. In those cards, the current city, weather condition with icon, humidity, wind speed, and date are in them. When the user searches for a weather in a city it will automatically display what I had just mentioned. For the date I used the moment.js code where it shows the date, year, day of the week, and the time. The user can either search using the city or city, state code, and country code. When the user clicks on a history city of their search it will take them back to that search and show the weather. When the user searches for the same city it won't appear again. The city also saves after they click refresh. I had also added a "clear history" button just in case the user wants to start fresh. The background also changes according to what the weather conditions is.  In the cards I had also added additional weather conditions just in case the user likes to get more indepth information on the weather. My live page can be seen in the <a href="#Table of Contents">Table of Contents</a> section. HTML, CSS, jQuery, Bootstrap, and Moment.js are all used on this application. It is also responsive to all devices: laptop,tablets, and mobile. You can <a href=https://github.com/hannybear88/Server-Side-APIs-Challenge-Weather-Dashboard>Click here</a>  to see my code for this project.  -->
 
 
 
@@ -37,9 +37,9 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 
 ## How to Use the Project and Acceptance Criteria
-
-<!-- <u><i><strong>Click on the image below</strong></i></u></a> to be directed straight to the deployed application
-<a href= "https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard"><img src="./assets/images/Weather-Dashboard-Icon-and-Title.png" /></a> -->
+<u><i><strong>Click on the image below</strong></i></u></a> 
+<a href= "https://hannybear88.github.io/Server-Side-APIs-Challenge-Weather-Dashboard"><img src="./assets/images/Weather-Dashboard-Icon-and-Title.png" alt = "direct link to deployed application" /></a>
+to be directed straight to the deployed application
 
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
