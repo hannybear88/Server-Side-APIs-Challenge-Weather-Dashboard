@@ -121,12 +121,15 @@ $(document).on("click", ".btn-secondary", (event) => {
 
 // challenging myself beginning - adding clear history button 
 // Clear search history
+
 $(document).on("click", "#clearHistory", (event) => {
+
 	  // Reset savedCities data, then re-render search history 
     localStorage.removeItem("savedCities")
     savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
     renderSearchHistory();
 });
+
 // challenging myself end - adding clear history button 
 
 // challenging myself end - adding clear history button 
@@ -158,6 +161,7 @@ async function getCityWeather() {
 		cityValue = "Rowland Heights";
     	isPageStartup = false;
 	}
+
 // console.log(cityValue);   // DEBUG LINE
 var geocodingCall =
 "http://api.openweathermap.org/geo/1.0/direct?q=" +
@@ -239,7 +243,9 @@ APIkey;
 
 	// Daily/Hourly Forecast Section
 	// Api to get 5-day/3-hours forecast
+
 	var forecastCall = `http://api.openweathermap.org/data/2.5/forecast?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
+
 	// console.log(forecastCall)    //DEBUG: Check if query returns anything
 	$.ajax({
 		url: forecastCall,
@@ -271,6 +277,7 @@ APIkey;
 // challenging myself beginning - adding sunset and surise
 // Format time for the cards
 function formatTempCardTime(cityData, index) {
+
   // Set times and timezones for current weather card
   var getTimezone = $(`#timezone`); // Local timezone
   var displayTimezone = moment.unix(timezone).utcOffset(0).format("H:mm");
@@ -322,9 +329,11 @@ function formatTempCard(dayData, cardType, index) {
   var iconURL = "";
   var skyconditions = dayData.weather[0].main;
   if (ENABLE_CUSTOM_ICONS) {
+
 	// Use custom icons
     iconURL = getCustomIconSrc(skyconditions);
   }
+
   // Use icons from OSM if custom icon isn't enabled or no icons is set for the condition
   if (!ENABLE_CUSTOM_ICONS || iconURL === "") {
     iconURL = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
@@ -334,5 +343,111 @@ function formatTempCard(dayData, cardType, index) {
   getIcon.attr("src", iconURL);
   getIcon.attr("alt", skyconditions);
 
- 
+
+
+  // Set the weather data
+  var getTemp = $(`#${cardID}-temp`);
+  var convertedTemp = "";
+  convertedTemp = Math.round(
+    ((parseInt(dayData.main.temp) - 273.15) * 9) / 5 + 32
+  );
+  getTemp.text(convertedTemp);
+
+  var getFeelsLike = $(`#${cardID}-feels-like`);
+  var calcFeel = Math.round(
+    ((parseInt(dayData.main.feels_like) - 273.15) * 9) / 5 + 32
+  );
+  getFeelsLike.text(calcFeel);
+
+  var getWind = $(`#${cardID}-wind-speed`);
+  var windSpeed = dayData.wind.speed;
+  getWind.text(windSpeed);
+
+  var getHumid = $(`#${cardID}-humidity`);
+  var humid = dayData.main.humidity;
+  getHumid.text(humid);
+
+  var getRain = $(`#${cardID}-rain`);
+  var rain = "";
+  try {
+    if (typeof dayData.rain === 'undefined') {
+      throw error;
+    }
+    rain = dayData.rain["1h"] + " mm";
+  } catch (error) {
+
+    // no rain data is found
+    rain = "No Data";
+  }
+  getRain.text(rain);
+
+  var getMaxTemp = $(`#${cardID}-highest-temp`);
+  var maxTemp = "";
+  maxTemp = Math.round(
+    ((parseInt(dayData.main.temp_max) - 273.15) * 9) / 5 + 32
+  );
+  getMaxTemp.text(maxTemp);
+
+  var getMinTemp = $(`#${cardID}-lowest-temp`);
+  var minTemp = "";
+  minTemp = Math.round(
+    ((parseInt(dayData.main.temp_min) - 273.15) * 9) / 5 + 32
+  );
+  getMinTemp.text(minTemp);
+
+  if (!isCurrentWeatherCard) {
+
+		// Get rain probability for forecast card
+    var getRainProb = $(`#${cardID}-rain-prob`);
+    var rainProb = (dayData.pop * 100).toFixed(0);
+    getRainProb.text(rainProb);
+  }
+}
+
+
+
+
+function saveTheCity() {
+
+  // Disable saving the search on start up
+  if (isPageStartup) {
+		isPageStartup = false;
+    return;
+  }
+
+
+	//  Add new Button with current City Name as text and value
+	var thisCity = cityInput.val().trim();
+	if (thisCity != "" && savedCities.indexOf(thisCity) === -1) {
+		savedCities.unshift(thisCity);
+	} else {
+		cityInput.val("");
+		cityInput.attr("placeholder", "City name...");
+	}
+	localStorage.setItem("savedCities", JSON.stringify(savedCities));
+}
+
+function renderSearchHistory() {
+	var getHistory = $("#searchHistory");
+	getHistory.empty();
+
+  // console.log(savedCities) // DEBUG LINE
+	for (city of savedCities) {
+		var newBtnGroup = $(
+			'<div class="btn-group d-flex align-items-stretch my-2" role="group" aria-label="City Button">'
+		);
+		var newBtn = $(
+			`<button class="btn btn-secondary p-0 fs-6 w-75" style="opacity:0.7;">`
+		);
+		var closeBtn = $(
+			`<button type="button" class="btn btn-close p-3 fs-6 bg-secondary" aria-label="Close">`
+		);
+
+		newBtn.text(city);
+		newBtnGroup.append(newBtn);
+		newBtnGroup.append(closeBtn);
+		getHistory.append(newBtnGroup);
+	}
+}
+
 	
