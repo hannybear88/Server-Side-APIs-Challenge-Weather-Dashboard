@@ -43,68 +43,39 @@ to be directed straight to the deployed application
 
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
+<img src="./assets/images/User-Can-Search-for-Selected-City-Screenshot.png" />
+<img src="./assets/images/User-Searched-for-Selected-City-Screenshot.png" />
 
 THEN I am presented with current and future conditions for that city and that city is added to the search history
+<img src="./assets/images/User-is-Viewing-Current-Weather-Conditions-in-Selected-City.png" />
+<img src="./assets/images/User-is-Viewing-the-Future-weather-Conditions-of-Selected-City.png" />
+<img src="./assets/images/Searched-City-is-Added-to-the-Search-History-Screenshot.png" />
 
 WHEN I view current weather conditions for that city
+<img src="./assets/images/User-is-Viewing-Current-Weather-Conditions-in-Selected-City.png" />
 
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the the wind speed
+<img src="./assets/images/User-is-Presented-with-the-current-weather-etc-screenshot.png" />
 
 WHEN I view future weather conditions for that city
+<img src="./assets/images/User-is-Viewing-the-Future-weather-Conditions-of-Selected-City.png" />
 
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+<img src="./assets/images/User-is-Presented-with-Current-Weather-Conditions-etc-Screenshot.png" />
 
 WHEN I click on a city in the search history
+<img src="./assets/images/User-Can-Click-On-a-City-in-Search-History-Screenshot.png" />
 
 THEN I am again presented with current and future conditions for that city
 
-<!-- GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner<br>
-THEN the current day is displayed at the top of the calendar
-<img src="./assets/images/Weather-Dashboard-Icon-and-Title.png" /> -->
+<img src="./assets/images/User-is-Again-Presented-with-Current-and-Future-Conditions-for-That-City.png" />
 
-<!-- WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-<img src="./assets/images/Work-Day-Timeblocks-Shown.png" />
-
-
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-<img src="./assets/images/Color-Coded-Past-Present-Future.png" />
-
-Past = GRAY
-<img src="./assets/images/Work-Day-Schedule-Past.png" />
-
-present = RED
-<img src="./assets/images/Work-Day-Schedule-Present.png" />
-
-Future = GREEN
-<img src="./assets/images/Work-Day-Schedule-Future.png" />
-
-WHEN I click into a time block
-<img src="./assets/images/User-Clicks-on-Timeblock.png" />
-
-THEN I can enter an event
-<img src="./assets/images/User-Enters-Schedule-in-Timeblock.png" />
-<img src="./assets/images/User-Entered-Schedule-in-Timeblock.png" />
-
-WHEN I click the save button for that time block
-<img src="./assets/images/User-Clicks-Save-to-Save-Their-Schedule-of-the-Day.png" />
-
-THEN the text for that event is saved in local storage
-<img src="./assets/images/User-Saves-Their-Schedule-of-Their-Day.png" /> 
-
-
-WHEN I refresh the page
-THEN the saved events persist
-<img src="./assets/images/User-Schedule-of-Their-Day-Saves-Persists-After-Refresh.png" />
-<img src="./assets/images/Schedule-Persists-After-Clicking-Refresh.gif"/> -->
 
 ## Challenges
-<!-- This assignment was a challenging by figuring out how to fetch the api. Even though this assignment was challenging, it was quite enjoyable because I do like knowing what the weather is like especially on days I have plans where would be takrn plsvr outside most of the day if not all day. It is also very useful to know the weather in advance, so I am prepared to drive in a weather other than the weather conditions being sunny and clear. It also helps me how I should dress up and if I need to bring extra clothes depending on the weather. I'd like to eventually challenge myself on this project by adding an option of having a section where it leads to a planner and jot down notes according to the weather. 
+This assignment was a challenging by figuring out how to fetch the api. Even though this assignment was challenging, it was quite enjoyable because I do like knowing what the weather is like especially on days I have plans where they would be takrn place outside most of the day if not all day. It is also very useful to know the weather in advance, so I am prepared to drive in a weather other than the weather conditions being sunny and clear. It also helps me how I should dress up and if I need to bring extra clothes depending on the weather. I'd like to eventually challenge myself on this project by adding an option of having a section where it leads to a planner and jot down notes according to the weather. 
 
 I wanted to add the UV Index in the cards, however, unfortunately it isn't available for free anymore. 
-<!-- I had also wanted to add the weather snow conditions, but I  -->
+In the future, I'd like to also add additional available weather conditions to the this project. 
 
 ## Success
 I feel like I did well on this assignment by suceeding on the requirements on the assignment. I had added extra features to challenge myself which I like to do. I had added the extra weather conditions, so the user knows what to expect such as the chance of rain and what the lowest & highest temperature would be for the next 5 days and 3-hourly forecast so they can be prepared what the weather would be like in advance.
@@ -113,8 +84,8 @@ I feel like I did well on this assignment by suceeding on the requirements on th
 
 ## Demo
 
-<!-- WORK DAY SCHEDULER SCREENSHOT
-<img src="./assets/images/Work-Day-Schedule-Screenshot.png" /> -->
+WEATHER DASHBOARD SCREENSHOT
+<img src="./assets/images/Weather-Dashboard-Full-Screenshot.png" /> 
 
 
 ## Features
