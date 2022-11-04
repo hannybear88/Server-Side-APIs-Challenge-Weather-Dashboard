@@ -244,7 +244,7 @@ APIkey;
 	// Daily/Hourly Forecast Section
 	// Api to get 5-day/3-hours forecast
 
-	var forecastCall = `http://api.openweathermap.org/data/2.5/forecast?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
+	var forecastCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
 
 	// console.log(forecastCall)    //DEBUG: Check if query returns anything
 	$.ajax({
@@ -336,7 +336,7 @@ function formatTempCard(dayData, cardType, index) {
 
   // Use icons from OSM if custom icon isn't enabled or no icons is set for the condition
   if (!ENABLE_CUSTOM_ICONS || iconURL === "") {
-    iconURL = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
+    iconURL = `https://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
   }
   console.log(cardType + "     " + iconURL);		// DEBUG LINE;
   getIcon.attr("style", "width: 4rem; height: 4rem");
