@@ -165,7 +165,7 @@ async function getCityWeather() {
 console.log(cityValue);   // DEBUG LINE
 var geocodingCall =
 "https://api.openweathermap.org/geo/1.0/direct?q=" +
-"Rowland Heights" +
+cityValue +
 "&limit=5&appid=" +
 APIkey;
 
