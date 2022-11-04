@@ -92,7 +92,7 @@ input {
 
 
 
-/* Mobile Phones adjustment*/
+/* Tablets and Mobile Phones adjustment*/
 @media (max-width: 780px) {  
 
   /*Make current weather section one column */
@@ -101,11 +101,12 @@ input {
   }
 }
 
-/* Tablet adjustments */
-@media (max-width: 1700px) {
 
-    /*Make current weather section one column */
-    #current-container {
-      display: block!important;
-  }
-}
+
+
+
+
+
+
+
+
