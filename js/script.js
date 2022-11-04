@@ -52,9 +52,8 @@ var clearBtn = $("#clearHistory");
 var savedBtns = $('button[class*="btn-secondary"]');
 
 
-
 /*******************************************************************/
-/*  Acceptance Criteria #1.2*/         
+/*  Acceptance Criteria #1.2*/
 /*that city is added to the search history*/
 /*******************************************************************/
 
@@ -119,25 +118,20 @@ $(document).on("click", ".btn-secondary", (event) => {
 	cityInput.val("");
 });
 
-// challenging myself beginning - adding clear history button 
+// challenging myself beginning - adding clear history button
 // Clear search history
-
 $(document).on("click", "#clearHistory", (event) => {
-
-	  // Reset savedCities data, then re-render search history 
+	  // Reset savedCities data, then re-render search history
     localStorage.removeItem("savedCities")
     savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
     renderSearchHistory();
 });
-
-// challenging myself end - adding clear history button 
-
-// challenging myself end - adding clear history button 
+// challenging myself end - adding clear history button
 
 /*******************************************************************/
 /*  Acceptance Criteria #1.1*/
 /*WHEN I search for a city*/
-/*THEN I am presented with current and future conditions for that city and*/    
+/*THEN I am presented with current and future conditions for that city and*/
 /*******************************************************************/
 
 
@@ -161,13 +155,12 @@ async function getCityWeather() {
 		cityValue = "Rowland Heights";
     	isPageStartup = false;
 	}
-
-// console.log(cityValue);   // DEBUG LINE
-var geocodingCall =
-"http://api.openweathermap.org/geo/1.0/direct?q=" +
-cityValue +
-"&limit=5&appid=" +
-APIkey;
+	// console.log(cityValue);   // DEBUG LINE
+	var geocodingCall =
+		"http://api.openweathermap.org/geo/1.0/direct?q=" +
+		cityValue +
+		"&limit=5&appid=" +
+		APIkey;
 
 	//  Convert cityName to cityCoords (in lat and lon) via Geocoding
 	const cityToCoords = await fetch(geocodingCall);
@@ -181,16 +174,15 @@ APIkey;
 	var latCurrent = coords[0].lat;
 	var lonCurrent = coords[0].lon;
 	var cityName = coords[0].name;
-  var stateName = coords[0].state;
+  	var stateName = coords[0].state;
 	var countryName = countryNames.of(coords[0].country);
 
-
-		// Adjust state name if it isn't provide
-		if (typeof stateName !== 'undefined') {
-			stateName = ", " + stateName;
-		} else {
-			stateName = "";
-		}
+	// Adjust state name if it isn't provide
+	if (typeof stateName !== 'undefined') {
+		stateName = ", " + stateName;
+	} else {
+		stateName = "";
+	}
 
 	var currentWeatherCall = `https://api.openweathermap.org/data/2.5/weather?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
 	const getCurrentWeather = await fetch(currentWeatherCall);
@@ -243,9 +235,7 @@ APIkey;
 
 	// Daily/Hourly Forecast Section
 	// Api to get 5-day/3-hours forecast
-
 	var forecastCall = `http://api.openweathermap.org/data/2.5/forecast?lat=${latCurrent}&lon=${lonCurrent}&appid=${APIkey}`;
-
 	// console.log(forecastCall)    //DEBUG: Check if query returns anything
 	$.ajax({
 		url: forecastCall,
@@ -277,7 +267,6 @@ APIkey;
 // challenging myself beginning - adding sunset and surise
 // Format time for the cards
 function formatTempCardTime(cityData, index) {
-
   // Set times and timezones for current weather card
   var getTimezone = $(`#timezone`); // Local timezone
   var displayTimezone = moment.unix(timezone).utcOffset(0).format("H:mm");
@@ -329,11 +318,9 @@ function formatTempCard(dayData, cardType, index) {
   var iconURL = "";
   var skyconditions = dayData.weather[0].main;
   if (ENABLE_CUSTOM_ICONS) {
-
 	// Use custom icons
     iconURL = getCustomIconSrc(skyconditions);
   }
-
   // Use icons from OSM if custom icon isn't enabled or no icons is set for the condition
   if (!ENABLE_CUSTOM_ICONS || iconURL === "") {
     iconURL = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
@@ -342,8 +329,6 @@ function formatTempCard(dayData, cardType, index) {
   getIcon.attr("style", "width: 4rem; height: 4rem");
   getIcon.attr("src", iconURL);
   getIcon.attr("alt", skyconditions);
-
-
 
   // Set the weather data
   var getTemp = $(`#${cardID}-temp`);
@@ -375,7 +360,6 @@ function formatTempCard(dayData, cardType, index) {
     }
     rain = dayData.rain["1h"] + " mm";
   } catch (error) {
-
     // no rain data is found
     rain = "No Data";
   }
@@ -408,7 +392,6 @@ function formatTempCard(dayData, cardType, index) {
 
 
 function saveTheCity() {
-
   // Disable saving the search on start up
   if (isPageStartup) {
 		isPageStartup = false;
